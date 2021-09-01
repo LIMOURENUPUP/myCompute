@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+<!-- 下面管事情的是name，name后面跟的值要和你controller那边的参数名一样，id并不会在功能完整性上面产生影响-->
+<form th:action="@{/mylogin}">
+    账号：<input type="text" id="username" name="username">
+    密码：<input type="text" id="password" name="password">
+    <input type="submit" id="login" value="login">
+</form>
+
+
+</body>
+</html>

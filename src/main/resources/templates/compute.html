@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>compute</title>
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="materialContainer">
+    <div class="box">
+        <div class="title">小黄加法器</div>
+        <form th:action="@{/add}">
+            <div class="input">
+                <label for="b">加数</label>
+                <input type="text" name="b" id="b">
+                <span class="spin"></span>
+            </div>
+            <div class="input">
+                <label for="a">被加数</label>
+                <input type="text" name="a" id="a">
+                <span class="spin"></span>
+            </div>
+            <div>结果</div>
+            <div th:text="${res}"></div>
+            <div class="button login">
+                <button type="submit">
+                    <span>求和</span>
+                    <i class="fa fa-check"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

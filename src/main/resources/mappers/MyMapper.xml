@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huang.bigproject.mapper.MyMapper">
+    <select id="findAll" resultType="com.huang.bigproject.pojo.user">
+        select *
+        from bigdb.users;
+    </select>
+<!--    # 用这个#{}包围起来的，就代表的是原方法的参数域，然后直接在括号里面写你在 mapper接口那边写的参数名-->
+<!--    # 就行，记得名字一定写对-->
+    <select id="findByUserName"  resultType="com.huang.bigproject.pojo.user">
+        select * from users where 1=1 and username=#{username}
+    </select>
+
+    <insert id="insertUser">
+        insert into users (password, username, age)
+        values (#{password},#{username},#{age});
+    </insert>
+    <delete id="deleteByUserName">
+        delete
+        from users
+        where username=#{username};
+    </delete>
+    <select id="getInfo" resultType="com.huang.bigproject.pojo.user">
+        select *
+        from users where username=#{username} and password=#{password};
+    </select>
+</mapper>
